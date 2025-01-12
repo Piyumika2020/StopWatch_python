@@ -9,10 +9,7 @@ root.geometry("400x600+100+100")
 
 start_time = None
 end_time=None
-#readable_time1=None
-#readable_time2=None
 actual_time=None
-#actual_time2=None
 vari = tk.StringVar()
 
 def start_fun():
@@ -21,23 +18,17 @@ def start_fun():
     start_button.configure(state='disable')
     end_button.configure(state='normal')
     reset_button.configure(state='normal')
-    #global readable_time1
     #readable_time1=datetime.fromtimestamp(start_time).strftime('%H:%M:%S')
     #print (readable_time1)
 
 def end_fun():
-    global readable_time1
     global start_time
     global vari
     end_time=time.time()
-    #readable_time2=datetime.fromtimestamp(end_time).strftime('%H:%M:%S')
     actual_time=end_time-start_time
-    #actual_time=datetime.fromtimestamp(actual_time).strftime('%H:%M:%S')
-    #print(readable_time2)
     end_button.configure(state='disable')
     label.configure(state='anable')
     reset_button.configure(state='normal')
-
 
     hours = int(actual_time // 3600)
     minutes = int((actual_time % 3600) // 60)
